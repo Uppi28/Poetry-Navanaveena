@@ -6,7 +6,7 @@ const LoadingSpinner = ({ message = 'Loading...' }) => {
     <div className="flex items-center justify-center py-8">
       <div className="text-center">
         <Loader2 className="w-8 h-8 text-primary-500 animate-spin mx-auto mb-4" />
-        <p className="text-gray-600">{message}</p>
+        <p className="text-gray-600 dark:text-gray-300">{message}</p>
       </div>
     </div>
   )

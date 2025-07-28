@@ -139,14 +139,14 @@ const PoetryForm = () => {
           <ArrowLeft className="w-4 h-4" />
           Back
         </button>
-        <div>
-          <h1 className="text-3xl font-bold gradient-text">
-            {isEditing ? 'Edit Poem' : 'Add New Poem'}
-          </h1>
-          <p className="text-gray-600 mt-1">
-            {isEditing ? 'Update your poem details' : 'Share your poetry with the world'}
-          </p>
-        </div>
+                  <div>
+            <h1 className="text-3xl font-bold gradient-text">
+              {isEditing ? 'Edit Poem' : 'Add New Poem'}
+            </h1>
+            <p className="text-gray-600 dark:text-gray-300 mt-1">
+              {isEditing ? 'Update your poem details' : 'Share your poetry with the world'}
+            </p>
+          </div>
       </div>
 
       {/* Form */}
@@ -155,7 +155,7 @@ const PoetryForm = () => {
           {/* Title and Author */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="title" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                 Title *
               </label>
               <input
@@ -172,7 +172,7 @@ const PoetryForm = () => {
             </div>
             
             <div>
-              <label htmlFor="author" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="author" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                 Author *
               </label>
               <input
@@ -191,7 +191,7 @@ const PoetryForm = () => {
 
           {/* Category */}
           <div className="mb-6">
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="category" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
               Category *
             </label>
             <select
@@ -214,7 +214,7 @@ const PoetryForm = () => {
 
           {/* Description */}
           <div className="mb-6">
-            <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="description" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
               Poem Description *
             </label>
             <textarea
@@ -224,7 +224,7 @@ const PoetryForm = () => {
               className={`input-field w-full h-64 resize-none poetry-text ${errors.description ? 'border-red-500' : ''}`}
               placeholder="Enter your poem here... You can use HTML formatting like <strong>bold</strong>, <em>italic</em>, and line breaks."
             />
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
               💡 Tip: You can use HTML formatting like &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, and line breaks for better formatting.
             </p>
             {errors.description && (
@@ -234,20 +234,20 @@ const PoetryForm = () => {
 
           {/* Tags */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
               Tags
             </label>
             <div className="flex flex-wrap gap-2 mb-3">
               {formData.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center gap-1 px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full"
+                  className="inline-flex items-center gap-1 px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm rounded-full"
                 >
                   {tag}
                   <button
                     type="button"
                     onClick={() => removeTag(tag)}
-                    className="ml-1 hover:text-primary-900 transition-colors duration-200"
+                    className="ml-1 hover:text-primary-900 dark:hover:text-primary-100 transition-colors duration-200"
                   >
                     <X className="w-3 h-3" />
                   </button>
