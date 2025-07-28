@@ -66,7 +66,7 @@ const PoetryCard = ({ poem, viewMode }) => {
             </Link>
             
             <div 
-              className="poetry-text text-gray-700 dark:text-gray-300 mb-4"
+              className="poetry-text mb-4"
               dangerouslySetInnerHTML={{ __html: truncateText(getPreviewText(), 200) }}
             />
             
@@ -176,7 +176,7 @@ const PoetryCard = ({ poem, viewMode }) => {
       </Link>
       
       <div 
-        className="poetry-text text-gray-700 dark:text-gray-300 text-sm mb-4 line-clamp-4"
+        className="poetry-text text-sm mb-4 line-clamp-4"
         dangerouslySetInnerHTML={{ __html: truncateText(getPreviewText(), 150) }}
       />
       

@@ -20,10 +20,25 @@ export const ThemeProvider = ({ children }) => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
   })
 
+  // Initialize theme on mount
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [])
+
   useEffect(() => {
     // Update localStorage and document class
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
-    document.documentElement.classList.toggle('dark', isDark)
+    if (isDark) {
+      document.documentElement.classList.add('dark')
+      console.log('Dark mode enabled')
+    } else {
+      document.documentElement.classList.remove('dark')
+      console.log('Light mode enabled')
+    }
   }, [isDark])
 
   const toggleTheme = () => {

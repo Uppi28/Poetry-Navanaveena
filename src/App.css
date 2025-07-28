@@ -66,7 +66,7 @@ select:focus {
 
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, #ed5fff 0%, #0ea5e9 100%);
+  background: linear-gradient(135deg, #f0abfc 0%, #67e8f9 100%);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -79,12 +79,12 @@ select:focus {
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(237, 95, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(240, 171, 252, 0.4);
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #ed5fff 0%, #0ea5e9 100%);
+  background: linear-gradient(135deg, #f0abfc 0%, #67e8f9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

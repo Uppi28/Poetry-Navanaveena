@@ -31,18 +31,21 @@ const Header = () => {
               to="/"
               className={`px-4 py-2 rounded-lg transition-all duration-200 ${
                 isActive('/')
-                  ? 'bg-primary-500 text-white shadow-md'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400'
+                  ? 'bg-cyan-400 text-white shadow-md'
+                  : 'text-gray-700 dark:text-gray-300 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-600 dark:hover:text-cyan-400'
               }`}
+              title="Browse Poems"
             >
-              Browse
+              <span className="hidden sm:inline">Browse</span>
+              <BookOpen className="w-4 h-4 sm:hidden" />
             </Link>
             <Link
               to="/add"
               className="btn-primary flex items-center space-x-2"
+              title="Add New Poem"
             >
               <Plus className="w-4 h-4" />
-              <span>Add Poem</span>
+              <span className="hidden sm:inline">Add Poem</span>
             </Link>
             <button
               onClick={toggleTheme}
@@ -92,10 +95,11 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`px-4 py-3 rounded-lg transition-all duration-200 ${
                   isActive('/')
-                    ? 'bg-primary-500 text-white shadow-md'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400'
+                    ? 'bg-cyan-400 text-white shadow-md'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-600 dark:hover:text-cyan-400'
                 }`}
               >
+                <BookOpen className="w-4 h-4 mr-2" />
                 Browse Poems
               </Link>
               <Link

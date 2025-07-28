@@ -135,9 +135,10 @@ const PoetryForm = () => {
         <button
           onClick={() => navigate('/')}
           className="btn-secondary flex items-center gap-2"
+          title="Back to Collection"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back
+          <span className="hidden sm:inline">Back</span>
         </button>
                   <div>
             <h1 className="text-3xl font-bold gradient-text">
@@ -267,9 +268,10 @@ const PoetryForm = () => {
                 type="button"
                 onClick={addTag}
                 className="btn-primary flex items-center gap-2"
+                title="Add Tag"
               >
                 <Plus className="w-4 h-4" />
-                Add
+                <span className="hidden sm:inline">Add</span>
               </button>
             </div>
           </div>
@@ -280,9 +282,12 @@ const PoetryForm = () => {
               type="submit"
               disabled={isSubmitting}
               className="btn-primary flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              title={isSubmitting ? 'Saving...' : (isEditing ? 'Update Poem' : 'Save Poem')}
             >
               <Save className="w-4 h-4" />
-              {isSubmitting ? 'Saving...' : (isEditing ? 'Update Poem' : 'Save Poem')}
+              <span className="hidden sm:inline">
+                {isSubmitting ? 'Saving...' : (isEditing ? 'Update Poem' : 'Save Poem')}
+              </span>
             </button>
           </div>
         </div>

@@ -47,24 +47,27 @@ const PoetryDetail = () => {
         <button
           onClick={() => navigate('/')}
           className="btn-secondary flex items-center gap-2"
+          title="Back to Collection"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Collection
+          <span className="hidden sm:inline">Back to Collection</span>
         </button>
         
         <div className="flex items-center gap-2">
           <Link
             to={`/edit/${poem.id}`}
             className="btn-primary flex items-center gap-2"
+            title="Edit Poem"
           >
             <Edit className="w-4 h-4" />
-            Edit
+            <span className="hidden sm:inline">Edit</span>
           </Link>
           <button
             onClick={handleDelete}
             className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2"
+            title="Delete Poem"
           >
-            Delete
+            <span className="hidden sm:inline">Delete</span>
           </button>
         </div>
       </div>
@@ -84,7 +87,7 @@ const PoetryDetail = () => {
 
         {/* Poem Description */}
         <div 
-          className="poetry-text text-lg leading-relaxed text-gray-800 dark:text-gray-200 text-center max-w-3xl mx-auto"
+          className="poetry-text text-lg text-center max-w-3xl mx-auto"
           dangerouslySetInnerHTML={{ __html: poem.description || '' }}
         />
       </div>
@@ -150,8 +153,10 @@ const PoetryDetail = () => {
         <Link
           to="/"
           className="btn-primary"
+          title="Browse All Poems"
         >
-          Browse All Poems
+          <span className="hidden sm:inline">Browse All Poems</span>
+          <span className="sm:hidden">Browse</span>
         </Link>
       </div>
     </div>

@@ -9,7 +9,10 @@ const SearchFilters = ({ onCategoryFilter }) => {
   return (
     <div className="glass-effect rounded-lg p-4 animate-slide-up">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200">Filter by Category</h3>
+        <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200">
+          <span className="hidden sm:inline">Filter by Category</span>
+          <span className="sm:hidden">Categories</span>
+        </h3>
         <button
           onClick={() => onCategoryFilter('all')}
           className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors duration-200"
@@ -19,15 +22,16 @@ const SearchFilters = ({ onCategoryFilter }) => {
       </div>
       
       <div className="flex flex-wrap gap-2">
-        <button
+                <button
           onClick={() => onCategoryFilter('all')}
-                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-              filters.category === 'all'
-                ? 'bg-primary-500 text-white shadow-md'
-                : 'bg-white/50 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/70 dark:hover:bg-gray-600/50'
-            }`}
+          className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+            filters.category === 'all'
+              ? 'bg-cyan-400 text-white shadow-md'
+              : 'bg-white/50 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/70 dark:hover:bg-gray-600/50'
+          }`}
         >
-          All Categories
+          <span className="hidden sm:inline">All Categories</span>
+          <span className="sm:hidden">All</span>
         </button>
         
         {categories.map((category) => (
@@ -36,7 +40,7 @@ const SearchFilters = ({ onCategoryFilter }) => {
             onClick={() => onCategoryFilter(category)}
             className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
               filters.category === category
-                ? 'bg-primary-500 text-white shadow-md'
+                ? 'bg-cyan-400 text-white shadow-md'
                 : 'bg-white/50 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/70 dark:hover:bg-gray-700/50'
             }`}
           >

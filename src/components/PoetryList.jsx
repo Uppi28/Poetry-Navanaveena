@@ -42,7 +42,7 @@ const PoetryList = () => {
             onClick={() => setViewMode('grid')}
             className={`p-2 rounded-lg transition-all duration-200 ${
               viewMode === 'grid'
-                ? 'bg-primary-500 text-white'
+                ? 'bg-cyan-400 text-white'
                 : 'bg-white/20 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/30 dark:hover:bg-gray-600/50'
             }`}
           >
@@ -52,7 +52,7 @@ const PoetryList = () => {
             onClick={() => setViewMode('list')}
             className={`p-2 rounded-lg transition-all duration-200 ${
               viewMode === 'list'
-                ? 'bg-primary-500 text-white'
+                ? 'bg-cyan-400 text-white'
                 : 'bg-white/20 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/30 dark:hover:bg-gray-600/50'
             }`}
           >
@@ -80,23 +80,26 @@ const PoetryList = () => {
           <button
             onClick={() => setShowFilters(!showFilters)}
             className="btn-secondary flex items-center space-x-2"
+            title="Filters"
           >
             <Filter className="w-4 h-4" />
-            <span>Filters</span>
+            <span className="hidden sm:inline">Filters</span>
           </button>
 
           {/* Sort Options */}
           <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-600 dark:text-gray-400">Sort by:</span>
+            <span className="text-sm text-gray-600 dark:text-gray-400 hidden sm:inline">Sort by:</span>
             <button
               onClick={() => handleSort('title')}
               className={`px-3 py-1 rounded-lg text-sm transition-all duration-200 ${
                 filters.sortBy === 'title'
-                  ? 'bg-primary-500 text-white'
+                  ? 'bg-cyan-400 text-white'
                   : 'bg-white/20 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/30 dark:hover:bg-gray-600/50'
               }`}
+              title="Sort by Title"
             >
-              Title
+              <span className="hidden sm:inline">Title</span>
+              <span className="sm:hidden">T</span>
               {filters.sortBy === 'title' && (
                 filters.sortOrder === 'asc' ? <SortAsc className="w-3 h-3 ml-1 inline" /> : <SortDesc className="w-3 h-3 ml-1 inline" />
               )}
@@ -105,11 +108,13 @@ const PoetryList = () => {
               onClick={() => handleSort('author')}
               className={`px-3 py-1 rounded-lg text-sm transition-all duration-200 ${
                 filters.sortBy === 'author'
-                  ? 'bg-primary-500 text-white'
+                  ? 'bg-cyan-400 text-white'
                   : 'bg-white/20 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/30 dark:hover:bg-gray-600/50'
               }`}
+              title="Sort by Author"
             >
-              Author
+              <span className="hidden sm:inline">Author</span>
+              <span className="sm:hidden">A</span>
               {filters.sortBy === 'author' && (
                 filters.sortOrder === 'asc' ? <SortAsc className="w-3 h-3 ml-1 inline" /> : <SortDesc className="w-3 h-3 ml-1 inline" />
               )}
@@ -118,11 +123,13 @@ const PoetryList = () => {
               onClick={() => handleSort('date')}
               className={`px-3 py-1 rounded-lg text-sm transition-all duration-200 ${
                 filters.sortBy === 'date'
-                  ? 'bg-primary-500 text-white'
+                  ? 'bg-cyan-400 text-white'
                   : 'bg-white/20 dark:bg-gray-700/50 text-gray-700 dark:text-gray-300 hover:bg-white/30 dark:hover:bg-gray-600/50'
               }`}
+              title="Sort by Date"
             >
-              Date
+              <span className="hidden sm:inline">Date</span>
+              <span className="sm:hidden">D</span>
               {filters.sortBy === 'date' && (
                 filters.sortOrder === 'asc' ? <SortAsc className="w-3 h-3 ml-1 inline" /> : <SortDesc className="w-3 h-3 ml-1 inline" />
               )}

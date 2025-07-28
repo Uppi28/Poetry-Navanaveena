@@ -3,14 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    transition: background-color 0.3s ease;
+  }
+  
   body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #a5b4fc 0%, #c084fc 100%);
     min-height: 100vh;
+    transition: background 0.3s ease;
   }
   
   .dark body {
     background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  }
+  
+  /* Ensure proper text colors in dark mode */
+  .dark {
+    color-scheme: dark;
   }
 }
 
@@ -21,11 +31,11 @@
   
   .poetry-text {
     font-family: 'Playfair Display', serif;
-    @apply leading-relaxed;
+    @apply leading-relaxed text-gray-800 dark:text-white;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent;
   }
   
   .glass-effect {
@@ -33,7 +43,7 @@
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+    @apply bg-gradient-to-r from-pink-300 to-cyan-300 hover:from-pink-400 hover:to-cyan-400 text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
   }
   
   .btn-secondary {
