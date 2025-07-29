@@ -148,7 +148,7 @@ const PoetryDetail = () => {
       {/* Navigation to other poems */}
       <div className="mt-8 text-center">
         <p className="text-gray-600 dark:text-gray-300 mb-4">
-          Continue exploring your poetry collection
+          Continue exploring my poetry collection
         </p>
         <Link
           to="/"

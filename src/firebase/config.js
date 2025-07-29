@@ -4,13 +4,13 @@ import { getAuth } from 'firebase/auth'
 
 // Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDiAoYf2Xk29eUVEDoYExU0om4W7_hok9M",
+  apiKey: "AIzaSyBL2hiEeLmXKPlEn9kBd4Im-aZlQkF_5TE",
   authDomain: "poetry-app-2024.firebaseapp.com",
   databaseURL: "https://poetry-app-2024-default-rtdb.firebaseio.com",
   projectId: "poetry-app-2024",
-  storageBucket: "poetry-app-2024.appspot.com",
-  messagingSenderId: "464609590808",
-  appId: "1:464609590808:web:3daea7ac8fbe88deca0d6d"
+  storageBucket: "poetry-app-2024.firebasestorage.app",
+  messagingSenderId: "337165000420",
+  appId: "1:337165000420:web:f55a80a23ee9cb58edd6f1"
 };
 
 // Initialize Firebase
