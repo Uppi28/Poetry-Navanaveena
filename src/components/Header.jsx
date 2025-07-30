@@ -21,7 +21,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold gradient-text">Poetry Vault</h1>
-              <p className="text-xs text-gray-600 dark:text-gray-400">Your Personal Collection</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400">My Personal Collection</p>
             </div>
           </Link>
 
@@ -90,26 +90,28 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 animate-slide-up">
             <nav className="flex flex-col space-y-2">
-              <Link
-                to="/"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg transition-all duration-200 ${
-                  isActive('/')
-                    ? 'bg-cyan-400 text-white shadow-md'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-600 dark:hover:text-cyan-400'
-                }`}
-              >
-                <BookOpen className="w-4 h-4 mr-2" />
-                Browse Poems
-              </Link>
-              <Link
-                to="/add"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-primary flex items-center justify-center space-x-2"
-              >
-                <Plus className="w-4 h-4" />
-                <span>Add New Poem</span>
-              </Link>
+              <div className="flex space-x-2">
+                <Link
+                  to="/"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`flex-1 px-4 py-3 rounded-lg transition-all duration-200 flex items-center justify-center ${
+                    isActive('/')
+                      ? 'bg-cyan-400 text-white shadow-md'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-600 dark:hover:text-cyan-400'
+                  }`}
+                >
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  Browse
+                </Link>
+                <Link
+                  to="/add"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex-1 btn-primary flex items-center justify-center space-x-2"
+                >
+                  <Plus className="w-4 h-4" />
+                  <span>Add</span>
+                </Link>
+              </div>
             </nav>
           </div>
         )}

@@ -1,15 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { usePoetry } from '../context/PoetryContext'
-import { ArrowLeft, Edit, Calendar, User, Tag, Heart } from 'lucide-react'
+import { ArrowLeft, Edit, Calendar, User, Tag, Heart, Trash2, Loader2 } from 'lucide-react'
 import { format } from 'date-fns'
 
 const PoetryDetail = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { poems, deletePoem } = usePoetry()
+  const { poems, deletePoem, loading } = usePoetry()
+  const [isLoading, setIsLoading] = useState(true)
   
   const poem = poems.find(p => p.id === id)
+  
+  useEffect(() => {
+    // Simulate loading time and check if poem exists
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 500)
+    
+    return () => clearTimeout(timer)
+  }, [poem])
+
+  // Show loading state
+  if (loading || isLoading) {
+    return (
+      <div className="text-center py-12">
+        <div className="max-w-md mx-auto">
+          <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-cyan-100 to-pink-100 dark:from-cyan-900/30 dark:to-pink-900/30 rounded-full flex items-center justify-center">
+            <Loader2 className="w-12 h-12 text-cyan-500 animate-spin" />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Loading Poem...</h3>
+          <p className="text-gray-500 dark:text-gray-400">
+            Please wait while we fetch your poetry.
+          </p>
+        </div>
+      </div>
+    )
+  }
 
   if (!poem) {
     return (
@@ -67,6 +94,7 @@ const PoetryDetail = () => {
             className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2"
             title="Delete Poem"
           >
+            <Trash2 className="w-4 h-4" />
             <span className="hidden sm:inline">Delete</span>
           </button>
         </div>

@@ -30,9 +30,9 @@ const PoetryList = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-bold gradient-text">Your Poetry Collection</h2>
+          <h2 className="text-3xl font-bold gradient-text">My Poetry Collection</h2>
           <p className="text-gray-600 dark:text-gray-400 mt-1">
-            {filteredPoems.length} poem{filteredPoems.length !== 1 ? 's' : ''} in your collection
+            {filteredPoems.length} poem{filteredPoems.length !== 1 ? 's' : ''} in my collection
           </p>
         </div>
         
@@ -143,7 +143,7 @@ const PoetryList = () => {
 
       {/* Loading State */}
       {loading ? (
-        <LoadingSpinner message="Loading your poetry collection..." />
+        <LoadingSpinner message="Loading the poetry collection..." />
       ) : error ? (
         <div className="text-center py-12">
           <div className="max-w-md mx-auto">
